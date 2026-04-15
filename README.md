@@ -13,25 +13,32 @@
 
 ## 风格展示
 
-### 简约现代（Minimal Modern）
-黑白为主，黄色强调，极简留白，优雅大气。
-
-![简约现代风格](examples/minimal-modern-style.png)
-
-### 活泼明亮（Vibrant Bright）
-紫+玫红+黄配色，明亮专业，年轻受众首选。
-
-![活泼明亮风格](examples/vibrant-bright-style.png)
-
-### 深色科技（Dark Tech）
-纯色深色背景，霓虹青+紫配色，未来感强。
-
-![深色科技风格](examples/dark-tech-style.png)
-
-### 学术论文（Academic Paper）
-米白底色，墨黑线条，严谨规范，适合研究报告。
-
-![学术论文风格](examples/academic-paper-style.png)
+<table>
+  <tr>
+    <td align="center">
+      <strong>简约现代（Minimal Modern）</strong><br/>
+      黑白为主，黄色强调，极简留白，优雅大气。<br/><br/>
+      <img src="examples/minimal-modern-style.png" alt="简约现代风格" width="220"/>
+    </td>
+    <td align="center">
+      <strong>活泼明亮（Vibrant Bright）</strong><br/>
+      紫+玫红+黄配色，明亮专业，年轻受众首选。<br/><br/>
+      <img src="examples/vibrant-bright-style.png" alt="活泼明亮风格" width="220"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>深色科技（Dark Tech）</strong><br/>
+      纯色深色背景，霓虹青+紫配色，未来感强。<br/><br/>
+      <img src="examples/dark-tech-style.png" alt="深色科技风格" width="220"/>
+    </td>
+    <td align="center">
+      <strong>学术论文（Academic Paper）</strong><br/>
+      米白底色，墨黑线条，严谨规范，适合研究报告。<br/><br/>
+      <img src="examples/academic-paper-style.png" alt="学术论文风格" width="220"/>
+    </td>
+  </tr>
+</table>
 
 ## 使用方法
 
