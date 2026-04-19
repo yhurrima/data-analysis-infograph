@@ -1,97 +1,122 @@
-# 数据分析信息图生成器
+# 图表叙事家 (Chart Storyteller)
 
-**Data Infographic Generator**
+**从报告中识别数据形态，自动组装叙事型信息图模块**
 
-从分析报告中自动提取关键数据和洞察，生成高质量信息图，帮助用户快速理解报告核心内容。
+一个面向分析报告、研究总结、业务复盘和传播场景的 Wan Skill。核心能力是：
+- 先识别报告里有什么数据形态
+- 再决定适合讲什么故事
+- 最后按叙事逻辑组装信息图模块
 
 ## 功能特点
 
-- **智能数据提取**：自动识别报告中的关键数据点、趋势、对比
-- **多图表编排**：自动设计7模块布局，包含多种图表类型
+- **智能数据识别**：自动识别报告中的趋势、排名、占比、原因等数据形态
+- **动态模块组装**：根据内容动态选择模块，不强求固定结构
+- **双版本输出**：标准版（5模块）和高密度版（8模块）
 - **4种视觉风格**：简约现代、活泼明亮、深色科技、学术论文
-- **一键生成**：支持4K分辨率，适合小红书分享、汇报展示
+- **高清输出**：支持 1774×2364（3:4竖版），适合移动端阅读
 
 ## 风格展示
 
-<table>
-  <tr>
-    <td align="center">
-      <strong>简约现代（Minimal Modern）</strong><br/>
-      黑白为主，黄色强调，极简留白，优雅大气。<br/><br/>
-      <img src="examples/minimal-modern-style.png" alt="简约现代风格" width="220"/>
-    </td>
-    <td align="center">
-      <strong>活泼明亮（Vibrant Bright）</strong><br/>
-      紫+玫红+黄配色，明亮专业，年轻受众首选。<br/><br/>
-      <img src="examples/vibrant-bright-style.png" alt="活泼明亮风格" width="220"/>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <strong>深色科技（Dark Tech）</strong><br/>
-      纯色深色背景，霓虹青+紫配色，未来感强。<br/><br/>
-      <img src="examples/dark-tech-style.png" alt="深色科技风格" width="220"/>
-    </td>
-    <td align="center">
-      <strong>学术论文（Academic Paper）</strong><br/>
-      米白底色，墨黑线条，严谨规范，适合研究报告。<br/><br/>
-      <img src="examples/academic-paper-style.png" alt="学术论文风格" width="220"/>
-    </td>
-  </tr>
-</table>
+基于《中国各省份结婚率调查报告》生成的示例：
+
+### 标准版（5模块）
+
+| 简约现代 (minimal) | 活泼明亮 (vibrant) |
+|:---:|:---:|
+| <img src="examples/minimal-standard.png" width="200"/> | <img src="examples/vibrant-standard.png" width="200"/> |
+| 白色背景，黑白为主，黄色点缀 | 明亮配色，紫红黄组合，传播感强 |
+
+| 深色科技 (dark) | 学术论文 (academic) |
+|:---:|:---:|
+| <img src="examples/dark-standard.png" width="200"/> | <img src="examples/academic-standard.png" width="200"/> |
+| 深色背景，霓虹青紫，未来感 | 米白底色，墨黑线条，严谨规范 |
+
+### 高密度版（8模块）
+
+| 简约现代 (minimal) | 活泼明亮 (vibrant) |
+|:---:|:---:|
+| <img src="examples/minimal-dense.png" width="200"/> | <img src="examples/vibrant-dense.png" width="200"/> |
+| 信息精炼，留白更多 | 信息丰富，视觉冲击 |
+
+| 深色科技 (dark) | 学术论文 (academic) |
+|:---:|:---:|
+| <img src="examples/dark-dense.png" width="200"/> | <img src="examples/academic-dense.png" width="200"/> |
+| 模块分区清晰，高对比度 | 正式展示，精确对齐 |
 
 ## 使用方法
 
-### 1. 准备输入
-提供分析报告内容（文本/PDF/链接）
+### 1. 提供报告内容
+- 报告原文
+- 或报告链接（支持飞书文档）
+- 或结构化摘要
 
-### 2. 选择风格
-从4种风格中选择一种：
-| 风格 | 配色 | 适用场景 |
-|------|------|---------|
-| 简约现代 | 黑白+黄 | 小红书、社交媒体 |
-| 活泼明亮 | 紫+玫红+黄 | 科普内容、年轻受众 |
-| 深色科技 | 霓虹青+紫 | 科技公司、产品发布 |
-| 学术论文 | 米白+墨黑 | 研究报告、论文解读 |
+### 2. 选择输出密度
+| 版本 | 模块数 | 适用场景 |
+|------|--------|---------|
+| 标准版 | 5个 | 汇报扫读、快速理解，文字更少、可读性更高 |
+| 高密度版 | 8个 | 一图读懂、完整展示，信息覆盖更全面 |
 
-### 3. 生成信息图
-使用 Wan2.7-Image 模型生成，默认配置：
+### 3. 选择视觉风格
+| 风格 | 配色特点 | 适用场景 |
+|------|---------|---------|
+| minimal | 白底、黑白主色、黄色唯一强调 | 清爽传播、简洁展示 |
+| vibrant | 紫+洋红+黄，明亮但专业 | 社媒传播、视觉吸引 |
+| dark | 深色背景、霓虹青紫、高对比 | 科技内容、趋势主题 |
+| academic | 米白底、炭黑线、酒红强调 | 研究报告、论文解读 |
+
+### 4. 生成信息图
+默认配置：
 - 模型：`wan2.7-image-pro`
-- 分辨率：4K (1774×2364，3:4比例)
+- 分辨率：`1774×2364`（3:4竖版）
 
 ## 信息图结构
 
-生成的信息图包含 **7个核心模块**：
-
-1. **报告速览** - 标题、时间范围、核心指标标签
+### 必选模块（3个）
+1. **报告速览** - 标题、时间范围、研究对象、核心标签
 2. **核心发现** - 最重要的发现及数据支撑
-3. **趋势分析** - 时间序列数据变化
-4. **结构对比** - 分布或类别对比
-5. **排名洞察** - TOP排名数据展示
-6. **关键指标** - 核心数据指标卡片
-7. **一句话结论** - 总结与数据来源
+3. **一句话结论** - 总结与数据来源
 
-## 适用场景
-
-- 业务分析报告解读
-- 用户研究/市场调研报告
-- 季度/年度总结汇报
-- 竞品分析报告
-- 小红书/公众号数据内容创作
-- 会议汇报一图总结
+### 动态候选模块（按需选择）
+- **趋势分析** - 时间序列、同比环比、增长下降
+- **排名洞察** - TOP榜单、头部集中、城市/品牌排序
+- **结构对比** - 占比、分布、份额、类别拆分
+- **关键指标卡片** - KPI多、需要快速扫读
+- **原因归因** - 驱动因素、影响原因
+- **行动建议** - 明确建议、策略方向
 
 ## 文件说明
 
 ```
 data-analysis-infograph-skill/
-├── README.md                        # 项目说明
-├── data-analysis-infograph-skill.md # 技能详细文档
-└── examples/                        # 风格示例图片
-    ├── minimal-modern-style.png     # 简约现代风格
-    ├── vibrant-bright-style.png     # 活泼明亮风格
-    ├── dark-tech-style.png          # 深色科技风格
-    └── academic-paper-style.png     # 学术论文风格
+├── README.md                     # 项目说明
+├── SKILL.md                      # Skill 核心文档
+├── chart-storyteller-prompt-template.md  # Prompt 模板
+├── chart-storyteller-style-guide.md      # 风格指南
+└── examples/                     # 示例图片
+    ├── minimal-standard.png      # 简约现代-标准版
+    ├── minimal-dense.png         # 简约现代-高密度版
+    ├── vibrant-standard.png      # 活泼明亮-标准版
+    ├── vibrant-dense.png         # 活泼明亮-高密度版
+    ├── dark-standard.png         # 深色科技-标准版
+    ├── dark-dense.png            # 深色科技-高密度版
+    ├── academic-standard.png     # 学术论文-标准版
+    └── academic-dense.png        # 学术论文-高密度版
 ```
+
+## 适用场景
+
+- 商业分析报告
+- 用户研究报告
+- 行业趋势报告
+- 竞品复盘报告
+- 增长复盘与周报月报
+- 移动端一图解读
+- 内部汇报型数据总结
+
+## 技术依赖
+
+- Wan2.7-Image 模型（阿里云 DashScope）
+- Lark CLI（飞书文档读取）
 
 ## License
 

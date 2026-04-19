@@ -1,1 +1,30 @@
+# macOS
 .DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temp files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+.env
+.venv/
+
+# Logs
+*.log
+
+# Build outputs
+dist/
+build/
