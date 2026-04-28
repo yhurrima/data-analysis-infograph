@@ -8,8 +8,9 @@
 - 只描述本次真正存在的数据内容
 - 先结构化，再写视觉 prompt
 - 模块内容尽量字段化，避免正文被模型误判成副标题
-- 只有在报告内容、输出密度、目标风格三项都确认后，才进入 prompt 编写
-- 默认生成配置：`wan2.7-image-pro` + `1774*2364`（3:4 竖版）
+- 只有在报告内容、输出密度、目标风格、生图模型/API 四项都确认后，才进入 prompt 编写
+- 默认推荐配置：Codex 内置生图能力（GPT Image 2 模型）+ `3072*4096`（4K级 3:4 竖版）
+- 如果不是在 Codex 环境中使用，或用户希望走外部服务，则使用用户提供的生图模型或 API
 
 ---
 
@@ -34,8 +35,16 @@ Create a narrative data infographic poster for mobile-friendly vertical reading.
 【STYLE】
 - Visual style: [minimal / vibrant / dark / academic]
 - Portrait ratio: 3:4
+- Default resolution: 3072x4096
+- Preferred image generation in Codex: built-in image generation capability (GPT Image 2 model)
+- If not using Codex, or if the user wants an external service, use the user's provided image generation model or API
 - Clear Chinese typography
+- Use bold, clean Chinese sans-serif typography in a Heiti style
+- Preferred font style: SimHei / Heiti / PingFang SC / Noto Sans CJK SC / Source Han Sans
+- Do not use Chinese serif fonts such as Songti, Fangsong, or decorative calligraphy fonts
+- Do not use handwritten, cute, ornamental, or overly stylized typefaces
 - Strong contrast for titles, key numbers, and labels
+- If visual style is academic: use a warm gray-beige background close to #E6DDC8, not pure white
 
 【LAYOUT】
 - Top area: title + subtitle + report context
@@ -126,6 +135,7 @@ Module 8 [一句话结论]:
 - If the report is qualitative, prefer insight cards, causal analysis, and action recommendations
 - Every module must be grounded in actual report content
 - Do not add platform branding, app logos, UI chrome, or social-media watermarks
+- If the style is academic, avoid cold white backgrounds and keep the page on a warm gray-beige paper tone
 ```
 
 ---

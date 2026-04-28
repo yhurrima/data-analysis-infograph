@@ -13,7 +13,7 @@
 - **动态模块组装**：根据内容动态选择模块，不强求固定结构
 - **双版本输出**：标准版（5模块）和高密度版（8模块）
 - **4种视觉风格**：简约现代、活泼明亮、深色科技、学术论文
-- **高清输出**：支持 1774×2364（3:4竖版），适合移动端阅读
+- **高清输出**：支持 3072×4096（4K级3:4竖版），适合移动端阅读和高清展示
 
 ## 风格展示
 
@@ -29,7 +29,7 @@
 | 深色科技 (dark) | 学术论文 (academic) |
 |:---:|:---:|
 | <img src="examples/dark-standard.png" width="200"/> | <img src="examples/academic-standard.png" width="200"/> |
-| 深色背景，霓虹青紫，未来感 | 米白底色，墨黑线条，严谨规范 |
+| 深色背景，霓虹青紫，未来感 | 暖灰米色底（#E6DDC8），墨黑线条，严谨规范 |
 
 ### 高密度版（8模块）
 
@@ -62,12 +62,12 @@
 | minimal | 白底、黑白主色、黄色唯一强调 | 清爽传播、简洁展示 |
 | vibrant | 紫+洋红+黄，明亮但专业 | 社媒传播、视觉吸引 |
 | dark | 深色背景、霓虹青紫、高对比 | 科技内容、趋势主题 |
-| academic | 米白底、炭黑线、酒红强调 | 研究报告、论文解读 |
+| academic | 暖灰米色底（#E6DDC8）、炭黑线、酒红强调 | 研究报告、论文解读 |
 
 ### 4. 生成信息图
 默认配置：
 - 模型：`wan2.7-image-pro`
-- 分辨率：`1774×2364`（3:4竖版）
+- 分辨率：`3072×4096`（4K级3:4竖版）
 
 ## 信息图结构
 
@@ -117,6 +117,24 @@ data-analysis-infograph-skill/
 
 - Wan2.7-Image 模型（阿里云 DashScope）
 - Lark CLI（飞书文档读取）
+
+## 本次更新
+
+- 变更内容:
+  - `academic` 风格背景统一为暖灰米色 `#E6DDC8`
+  - 默认生图分辨率更新为 `3072×4096`
+  - 保持 3:4 竖版信息图定位，不改为横向 4K
+- 使用方式:
+  - 未显式指定时，默认按 `wan2.7-image-pro` + `3072×4096` 生成
+  - 使用 `academic` 风格时，应明确要求暖灰米色底、非纯白背景
+- 影响范围:
+  - [SKILL.md](/Users/yhurri/Desktop/Codex_workfile/tasks/wanxiang-skill-competition/data-analysis-infograph-skill/SKILL.md)
+  - [chart-storyteller-style-guide.md](/Users/yhurri/Desktop/Codex_workfile/tasks/wanxiang-skill-competition/data-analysis-infograph-skill/chart-storyteller-style-guide.md)
+  - [chart-storyteller-prompt-template.md](/Users/yhurri/Desktop/Codex_workfile/tasks/wanxiang-skill-competition/data-analysis-infograph-skill/chart-storyteller-prompt-template.md)
+- 验证方式:
+  - 生成 `standard + academic`，检查背景是否接近 `#E6DDC8`
+  - 生成 `dense + academic`，检查背景稳定性和高密度下文字可读性
+  - 检查默认输出是否保持 3:4 竖版
 
 ## License
 
