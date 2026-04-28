@@ -1,106 +1,124 @@
 # 图表叙事家 (Chart Storyteller)
 
-**从报告中识别数据形态，自动组装叙事型信息图模块**
+从分析报告中识别数据形态，自动组装叙事型信息图模块，生成适合汇报、研究解读和传播展示的竖版数据长图。
 
-一个面向分析报告、研究总结、业务复盘和传播场景的 Wan Skill。核心能力是：
-- 先识别报告里有什么数据形态
-- 再决定适合讲什么故事
-- 最后按叙事逻辑组装信息图模块
+图表叙事家不是固定套用图表模板，而是先判断报告里有哪些数据和语义信号，再选择适合的模块讲清楚一个完整故事。
 
-## 功能特点
+## 核心能力
 
-- **智能数据识别**：自动识别报告中的趋势、排名、占比、原因等数据形态
-- **动态模块组装**：根据内容动态选择模块，不强求固定结构
-- **双版本输出**：标准版（5模块）和高密度版（8模块）
-- **4种视觉风格**：简约现代、活泼明亮、深色科技、学术论文
-- **高清输出**：支持 3072×4096（4K级3:4竖版），适合移动端阅读和高清展示
+- **内容识别**：识别趋势、占比、排名、画像、流程、原因、建议等报告信号
+- **动态组装**：根据真实内容选择模块，不强行塞入不存在的数据结构
+- **双密度输出**：支持标准版 5 模块与高密度版 8 模块
+- **四种风格**：简约现代、活泼明亮、深色科技、学术论文
+- **高清竖版**：默认 `3072×4096`，保持 3:4 竖版信息图定位
+- **中文排版约束**：默认使用黑体风格中文无衬线字体，避免宋体、手写体和装饰字体
 
 ## 风格展示
 
-基于《中国各省份结婚率调查报告》生成的示例：
+以下示例基于同一份报告内容生成，用于展示不同风格与信息密度的视觉差异。
 
-### 标准版（5模块）
+### 标准版：5 模块
 
-| 简约现代 (minimal) | 活泼明亮 (vibrant) |
-|:---:|:---:|
-| <img src="examples/minimal-standard.png" width="200"/> | <img src="examples/vibrant-standard.png" width="200"/> |
-| 白色背景，黑白为主，黄色点缀 | 明亮配色，紫红黄组合，传播感强 |
+| 简约现代 | 活泼明亮 |
+| --- | --- |
+| <img src="examples/minimal-standard.png" width="260" alt="简约现代标准版示例" /> | <img src="examples/vibrant-standard.png" width="260" alt="活泼明亮标准版示例" /> |
+| 白色背景，黑白为主，黄色点缀 | 鲜明配色，传播感更强 |
 
-| 深色科技 (dark) | 学术论文 (academic) |
-|:---:|:---:|
-| <img src="examples/dark-standard.png" width="200"/> | <img src="examples/academic-standard.png" width="200"/> |
-| 深色背景，霓虹青紫，未来感 | 暖灰米色底（#E6DDC8），墨黑线条，严谨规范 |
+| 深色科技 | 学术论文 |
+| --- | --- |
+| <img src="examples/dark-standard.png" width="260" alt="深色科技标准版示例" /> | <img src="examples/academic-standard.png" width="260" alt="学术论文标准版示例" /> |
+| 深色背景，高对比度，偏科技感 | 暖灰米色底 `#E6DDC8`，正式规整 |
 
-### 高密度版（8模块）
+### 高密度版：8 模块
 
-| 简约现代 (minimal) | 活泼明亮 (vibrant) |
-|:---:|:---:|
-| <img src="examples/minimal-dense.png" width="200"/> | <img src="examples/vibrant-dense.png" width="200"/> |
-| 信息精炼，留白更多 | 信息丰富，视觉冲击 |
+| 简约现代 | 活泼明亮 |
+| --- | --- |
+| <img src="examples/minimal-dense.png" width="260" alt="简约现代高密度版示例" /> | <img src="examples/vibrant-dense.png" width="260" alt="活泼明亮高密度版示例" /> |
+| 留白更克制，适合完整扫读 | 信息更满，适合一图传播 |
 
-| 深色科技 (dark) | 学术论文 (academic) |
-|:---:|:---:|
-| <img src="examples/dark-dense.png" width="200"/> | <img src="examples/academic-dense.png" width="200"/> |
-| 模块分区清晰，高对比度 | 正式展示，精确对齐 |
+| 深色科技 | 学术论文 |
+| --- | --- |
+| <img src="examples/dark-dense.png" width="260" alt="深色科技高密度版示例" /> | <img src="examples/academic-dense.png" width="260" alt="学术论文高密度版示例" /> |
+| 分区清晰，适合趋势和科技主题 | 对齐严谨，适合研究报告和评审展示 |
 
-## 使用方法
+## 使用方式
 
-### 1. 提供报告内容
-- 报告原文
-- 或报告链接（支持飞书文档）
-- 或结构化摘要
+正式生成前，需要明确四项输入：
 
-### 2. 选择输出密度
-| 版本 | 模块数 | 适用场景 |
-|------|--------|---------|
-| 标准版 | 5个 | 汇报扫读、快速理解，文字更少、可读性更高 |
-| 高密度版 | 8个 | 一图读懂、完整展示，信息覆盖更全面 |
+1. **报告内容**：报告原文、报告链接，或结构化摘要
+2. **输出密度**：标准版或高密度版
+3. **目标风格**：简约现代、活泼明亮、深色科技、学术论文
+4. **生图方式**：Codex 内置生图能力，或用户提供的外部生图模型/API
 
-### 3. 选择视觉风格
-| 风格 | 配色特点 | 适用场景 |
-|------|---------|---------|
-| minimal | 白底、黑白主色、黄色唯一强调 | 清爽传播、简洁展示 |
-| vibrant | 紫+洋红+黄，明亮但专业 | 社媒传播、视觉吸引 |
-| dark | 深色背景、霓虹青紫、高对比 | 科技内容、趋势主题 |
-| academic | 暖灰米色底（#E6DDC8）、炭黑线、酒红强调 | 研究报告、论文解读 |
+可直接这样描述需求：
 
-### 4. 生成信息图
-默认配置：
-- 模型：`wan2.7-image-pro`
-- 分辨率：`3072×4096`（4K级3:4竖版）
-
-## 信息图结构
-
-### 必选模块（3个）
-1. **报告速览** - 标题、时间范围、研究对象、核心标签
-2. **核心发现** - 最重要的发现及数据支撑
-3. **一句话结论** - 总结与数据来源
-
-### 动态候选模块（按需选择）
-- **趋势分析** - 时间序列、同比环比、增长下降
-- **排名洞察** - TOP榜单、头部集中、城市/品牌排序
-- **结构对比** - 占比、分布、份额、类别拆分
-- **关键指标卡片** - KPI多、需要快速扫读
-- **原因归因** - 驱动因素、影响原因
-- **行动建议** - 明确建议、策略方向
-
-## 文件说明
-
+```text
+请把这份报告做成高密度版信息图，风格用学术论文，使用 Codex 内置生图能力。
 ```
+
+## 输出密度
+
+| 版本 | 模块数 | 适合场景 |
+| --- | ---: | --- |
+| 标准版 | 5 | 汇报扫读、快速理解、重点提炼 |
+| 高密度版 | 8 | 一图读懂、完整展示、传播长图 |
+
+## 视觉风格
+
+| 风格 | 特点 | 适合场景 |
+| --- | --- | --- |
+| 简约现代 | 白底、黑白主色、黄色强调，留白更多 | 清爽传播、简洁展示 |
+| 活泼明亮 | 颜色更鲜明，节奏更强，视觉吸引力更高 | 社媒传播、活动复盘 |
+| 深色科技 | 深色背景、霓虹强调、高对比度 | 科技内容、趋势主题 |
+| 学术论文 | 暖灰米色底 `#E6DDC8`、炭黑线、酒红强调 | 研究报告、论文解读、评审展示 |
+
+## 模块策略
+
+每张信息图默认保留 3 个必选模块，保证叙事闭环：
+
+1. **报告速览**：标题、时间范围、研究对象、核心标签
+2. **核心发现**：最重要的发现，以及 1-2 条数据支撑
+3. **一句话结论**：总结判断，并附上数据来源或研究背景
+
+其余模块根据报告内容动态选择：
+
+- **趋势分析**：时间序列、同比、环比、增长、下降、波动
+- **结构对比**：占比、构成、分布、份额、类别拆分
+- **排名洞察**：TOP 榜单、领先项、城市/品牌/品类排序
+- **关键指标卡片**：多 KPI 快速扫读
+- **用户画像**：年龄、性别、城市、客群、消费层级等人群特征
+- **流程拆解**：转化路径、用户旅程、步骤流程、漏斗
+- **原因归因**：驱动因素、影响因素、增长或下滑原因
+- **行动建议**：策略方向、下一步动作、优化建议
+
+## 默认配置
+
+- 默认模型：`wan2.7-image-pro`
+- 默认分辨率：`3072×4096`
+- 默认画幅：3:4 竖版
+- 中文字体：黑体、苹方、思源黑体、Noto Sans CJK SC、SimHei、Heiti 等无衬线风格
+- 学术论文背景：暖灰米色 `#E6DDC8`，不要回退为纯白
+
+如果在 Codex 中使用，默认推荐 Codex 内置生图能力；如果使用外部服务，则按用户提供的生图模型或 API 执行。
+
+## 项目文件
+
+```text
 data-analysis-infograph-skill/
-├── README.md                     # 项目说明
-├── SKILL.md                      # Skill 核心文档
-├── chart-storyteller-prompt-template.md  # Prompt 模板
-├── chart-storyteller-style-guide.md      # 风格指南
-└── examples/                     # 示例图片
-    ├── minimal-standard.png      # 简约现代-标准版
-    ├── minimal-dense.png         # 简约现代-高密度版
-    ├── vibrant-standard.png      # 活泼明亮-标准版
-    ├── vibrant-dense.png         # 活泼明亮-高密度版
-    ├── dark-standard.png         # 深色科技-标准版
-    ├── dark-dense.png            # 深色科技-高密度版
-    ├── academic-standard.png     # 学术论文-标准版
-    └── academic-dense.png        # 学术论文-高密度版
+├── README.md
+├── SKILL.md
+├── chart-storyteller-feishu-guide.md
+├── chart-storyteller-prompt-template.md
+├── chart-storyteller-style-guide.md
+└── examples/
+    ├── minimal-standard.png
+    ├── minimal-dense.png
+    ├── vibrant-standard.png
+    ├── vibrant-dense.png
+    ├── dark-standard.png
+    ├── dark-dense.png
+    ├── academic-standard.png
+    └── academic-dense.png
 ```
 
 ## 适用场景
@@ -112,29 +130,6 @@ data-analysis-infograph-skill/
 - 增长复盘与周报月报
 - 移动端一图解读
 - 内部汇报型数据总结
-
-## 技术依赖
-
-- Wan2.7-Image 模型（阿里云 DashScope）
-- Lark CLI（飞书文档读取）
-
-## 本次更新
-
-- 变更内容:
-  - `academic` 风格背景统一为暖灰米色 `#E6DDC8`
-  - 默认生图分辨率更新为 `3072×4096`
-  - 保持 3:4 竖版信息图定位，不改为横向 4K
-- 使用方式:
-  - 未显式指定时，默认按 `wan2.7-image-pro` + `3072×4096` 生成
-  - 使用 `academic` 风格时，应明确要求暖灰米色底、非纯白背景
-- 影响范围:
-  - [SKILL.md](/Users/yhurri/Desktop/Codex_workfile/tasks/wanxiang-skill-competition/data-analysis-infograph-skill/SKILL.md)
-  - [chart-storyteller-style-guide.md](/Users/yhurri/Desktop/Codex_workfile/tasks/wanxiang-skill-competition/data-analysis-infograph-skill/chart-storyteller-style-guide.md)
-  - [chart-storyteller-prompt-template.md](/Users/yhurri/Desktop/Codex_workfile/tasks/wanxiang-skill-competition/data-analysis-infograph-skill/chart-storyteller-prompt-template.md)
-- 验证方式:
-  - 生成 `standard + academic`，检查背景是否接近 `#E6DDC8`
-  - 生成 `dense + academic`，检查背景稳定性和高密度下文字可读性
-  - 检查默认输出是否保持 3:4 竖版
 
 ## License
 
